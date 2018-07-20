@@ -29,3 +29,9 @@ libraryDependencies ++= {
     "org.scalatest"     %% "scalatest"       % scalatestVersion % "test"
   )
 }
+
+lazy val root = (project in file("."))
+  .enablePlugins(JavaAppPackaging, DockerPlugin)
+  .settings(
+    dockerBaseImage := "java:8-jdk-alpine"
+  )
