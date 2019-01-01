@@ -1,4 +1,4 @@
-name := "Akka-rest"
+name := "wanna-tag"
 
 version := "0.1"
 
@@ -29,3 +29,9 @@ libraryDependencies ++= {
     "org.scalatest"     %% "scalatest"       % scalatestVersion % "test"
   )
 }
+
+lazy val root = (project in file("."))
+  .enablePlugins(JavaAppPackaging, DockerPlugin)
+  .settings(
+    dockerBaseImage := "java:8-jdk-alpine"
+  )
