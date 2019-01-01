@@ -1,4 +1,4 @@
-name := "Akka-rest"
+name := "wanna-tag"
 
 version := "0.1"
 
