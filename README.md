@@ -11,7 +11,7 @@ WannaTagサーバサイド
   - domain // ドメイン層
     - model // ドメインオブジェクト
     - service // ドメインモデルのロジック
-    - repository // 
+    - repository // infrastructure層のinterface定義
   - infrastructure // infrastructure層
   - presentation // presentation層（UI）
   - serivce // ApplicationService層
