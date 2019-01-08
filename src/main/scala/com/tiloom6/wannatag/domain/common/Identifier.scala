@@ -5,20 +5,29 @@ package com.tiloom6.wannatag.domain.common
  *
  * @tparam A 識別子の値型
  */
-trait Identifier [+A] {
+trait Identifier [+A] extends ValueObject {
 
+  /** 識別子の値 */
   def value: A
 
+  /** 定義済みであるか */
   val isDefined: Boolean = true
 
+  /** 識別子が存在しないか */
   val isEmpty: Boolean = !isDefined
 
+  /*
+   * @inheritdoc
+   */
   override def equals(obj: Any): Boolean = obj match {
     case that: Identifier[_] =>
         value == that.value
     case _ => false
   }
 
+  /*
+   * @inheritdoc
+   */
   override def hashCode: Int = 31 * value.##
 }
 
@@ -27,15 +36,27 @@ trait Identifier [+A] {
  */
 trait EmptyIdentifier extends Identifier[Nothing] {
 
+  /*
+   * @inheritdoc
+   */
   def value: Nothing = throw new NoSuchElementException
 
+  /*
+   * @inheritdoc
+   */
   override val isDefined: Boolean = false
 
+  /*
+   * @inheritdoc
+   */
   override def equals(obj: Any) = obj match {
     case that: EmptyIdentifier => this eq that
     case _ => false
   }
 
+  /*
+   * @inheritdoc
+   */
   override def hashCode: Int = 0
 }
 
