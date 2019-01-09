@@ -1,5 +1,8 @@
 package com.tiloom6.wannatag.domain.model.wannatag
 
-import com.tiloom6.wannatag.domain.common.ValueObject
-
-case class WannatagPostDate(value: Long) extends ValueObject
+/*
+ * wannatag登録日時
+ *
+ * @param value 登録日時の値
+ */
+case class WannatagPostDate(value: Long)

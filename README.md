@@ -21,4 +21,4 @@ WannaTagサーバサイド
 
 # DDDのサンプル
 
-https://github.com/j5ik2o/spetstore
+https://github.com/j5ik2o/akka-ddd-cqrs-es-example
