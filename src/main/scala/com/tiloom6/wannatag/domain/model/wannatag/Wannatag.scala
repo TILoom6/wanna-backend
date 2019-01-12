@@ -62,19 +62,19 @@ object Wannatag {
    */
   def unapply(wannatag: Wannatag): Option[(WannatagId, WannatagTitle, WannatagBody, WannatagAuthorName, WannatagPostDate)] =
     Some(wannatag.id, wannatag.title, wannatag.body, wannatag.username, wannatag.postDate)
-}
 
-/*
- * Wannatagエンティティ
- *
- * @param id [[WannatagId]]
- * @param title [[WannatagTitle]]
- * @param body [[WannatagBody]]
- * @param username [[WannatagAuthorName]]
- * @param postDate [[WannatagPostDate]]
- */
-private case class WannatagImpl(id: WannatagId,
-                                title: WannatagTitle,
-                                body: WannatagBody,
-                                username: WannatagAuthorName,
-                                postDate: WannatagPostDate) extends Wannatag
+  /*
+   * Wannatagエンティティ
+   *
+   * @param id [[WannatagId]]
+   * @param title [[WannatagTitle]]
+   * @param body [[WannatagBody]]
+   * @param username [[WannatagAuthorName]]
+   * @param postDate [[WannatagPostDate]]
+   */
+  private case class WannatagImpl(id: WannatagId,
+                                  title: WannatagTitle,
+                                  body: WannatagBody,
+                                  username: WannatagAuthorName,
+                                  postDate: WannatagPostDate) extends Wannatag
+}
