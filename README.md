@@ -22,3 +22,7 @@ WannaTagサーバサイド
 # DDDのサンプル
 
 https://github.com/j5ik2o/akka-ddd-cqrs-es-example
+
+# Dao Generator
+
+https://github.com/septeni-original/sbt-dao-generator
