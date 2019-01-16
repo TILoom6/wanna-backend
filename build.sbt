@@ -38,7 +38,17 @@ lazy val root = (project in file("."))
     driverClassName in generator := "com.mysql.cj.jdbc.Driver",
     jdbcUrl in generator := "jdbc:mysql://localhost/wanna",
     jdbcUser in generator := sys.env.getOrElse("MYSQL_DB_USER", "user"),
-    jdbcPassword in generator := sys.env.getOrElse("MYSQL_DB_PASSWORD", "password")
+    jdbcPassword in generator := sys.env.getOrElse("MYSQL_DB_PASSWORD", "password"),
+    // カラム型名をどのクラスにマッピングするかを決める関数を記述します(必須)
+    propertyTypeNameMapper in generator := {
+      case "INTEGER" | "TINYINT"             => "Int"
+      case "BIGINT"                          => "Long"
+      case "VARCHAR"                         => "String"
+      case "BOOLEAN" | "BIT"                 => "Boolean"
+      case "DATE" | "TIMESTAMP" | "DATETIME" => "org.joda.time.DateTime"
+      case "DECIMAL"                         => "BigDecimal"
+      case "ENUM"                            => "String"
+    },
   )
   .settings(
     dockerBaseImage := "java:8-jdk-alpine"
