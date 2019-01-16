@@ -35,5 +35,11 @@ lazy val root = (project in file("."))
   .enablePlugins(JavaAppPackaging, DockerPlugin)
   .settings(baseSettings)
   .settings(
+    driverClassName in generator := "com.mysql.cj.jdbc.Driver",
+    jdbcUrl in generator := "jdbc:mysql://localhost/wanna",
+    jdbcUser in generator := sys.env.getOrElse("MYSQL_DB_USER", "user"),
+    jdbcPassword in generator := sys.env.getOrElse("MYSQL_DB_PASSWORD", "password")
+  )
+  .settings(
     dockerBaseImage := "java:8-jdk-alpine"
   )
