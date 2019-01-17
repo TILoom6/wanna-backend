@@ -49,6 +49,7 @@ lazy val root = (project in file("."))
       case "DECIMAL"                         => "BigDecimal"
       case "ENUM"                            => "String"
     },
+    outputDirectoryMapper in generator := {_ => new java.io.File((scalaSource in Compile).value, "/com/tiloom6/wannatag/adaptor/dao")},
   )
   .settings(
     dockerBaseImage := "java:8-jdk-alpine"
