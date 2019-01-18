@@ -1,34 +1,36 @@
 package com.tiloom6.wannatag.domain.model.wannatag
 
+import com.tiloom6.wannatag.domain.model.Entity
+
 /*
  * Wannatagエンティティトレイト
  */
-trait Wannatag {
+trait Wannatag extends Entity[WannatagId]{
 
   /*
    * [[WannatagId]]
    */
-  def id: WannatagId
+  override val id: WannatagId
 
   /*
    * [[WannatagTitle]]
    */
-  def title: WannatagTitle
+  val title: WannatagTitle
 
   /*
    * [[WannatagBody]]
    */
-  def body: WannatagBody
+  val body: WannatagBody
 
   /*
    * [[WannatagAuthorName]]
    */
-  def username: WannatagAuthorName
+  val username: WannatagAuthorName
 
   /*
    * [[WannatagPostDate]]
    */
-  def postDate: WannatagPostDate
+  val postDate: WannatagPostDate
 }
 
 /*
