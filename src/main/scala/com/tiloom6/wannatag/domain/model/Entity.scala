@@ -63,5 +63,11 @@ trait EntityId[T] extends Any with ValueObject[T] {
  * @tparam ID Entityの識別子型
  */
 trait EntityIdGenerator[ID <: EntityId[_]] {
+
+  /*
+   * entity識別子生成
+   *
+   * @return entity識別子
+   */
   def generate(): ID
 }

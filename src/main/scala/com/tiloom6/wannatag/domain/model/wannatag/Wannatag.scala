@@ -8,11 +8,6 @@ import com.tiloom6.wannatag.domain.model.Entity
 trait Wannatag extends Entity[WannatagId]{
 
   /*
-   * [[WannatagId]]
-   */
-  override val id: WannatagId
-
-  /*
    * [[WannatagTitle]]
    */
   val title: WannatagTitle
@@ -63,7 +58,7 @@ object Wannatag {
    * @return (WannatagId, WannatagTitle, WannatagBody, WannatagAuthorName, WannatagPostDate) tuple
    */
   def unapply(wannatag: Wannatag): Option[(WannatagId, WannatagTitle, WannatagBody, WannatagAuthorName, WannatagPostDate)] =
-    Some(wannatag.id, wannatag.title, wannatag.body, wannatag.username, wannatag.postDate)
+    Some((wannatag.id, wannatag.title, wannatag.body, wannatag.username, wannatag.postDate))
 
   /*
    * Wannatagエンティティ
