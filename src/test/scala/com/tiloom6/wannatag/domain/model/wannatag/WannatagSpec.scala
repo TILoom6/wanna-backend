@@ -11,7 +11,7 @@ final class WannatagSpec extends WordSpecLike
   private val id = WannatagId(1)
   private val title = WannatagTitle("title")
   private val body = WannatagBody("body")
-  private val username = WannatagAuthorName("author name")
+  private val username = WannatagAuthorId("author name")
   private val postDate = WannatagPostDate(1)
 
   "wannatag" should {

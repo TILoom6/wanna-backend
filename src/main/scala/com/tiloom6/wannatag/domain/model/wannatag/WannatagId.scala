@@ -10,15 +10,15 @@ import com.tiloom6.wannatag.domain.model.EntityId
 case class WannatagId private (value: Long) extends AnyVal with EntityId[Long]
 
 /*
- * wannatagの識別子コンパニオンオブジェクト
+ * [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]] のコンパニオンオブジェクト
  */
 object WannatagId {
 
   /*
-   * wannatagの識別子ファクトリ
+   * [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]] のファクトリ
    *
    * @param value 識別子の値
-   * @return wannatagの識別子
+   * @return [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]]
    */
   def apply(value: Long): WannatagId = {
     require(value > 0,

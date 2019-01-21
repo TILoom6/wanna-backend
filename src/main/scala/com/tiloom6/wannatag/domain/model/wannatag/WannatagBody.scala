@@ -10,15 +10,15 @@ import com.tiloom6.wannatag.domain.model.ValueObject
 case class WannatagBody private (value: String) extends AnyVal with ValueObject[String]
 
 /*
- * wannatag本文コンパニオンオブジェクト
+ * [[com.tiloom6.wannatag.domain.model.wannatag.WannatagBody]] のコンパニオンオブジェクト
  */
 object WannatagBody {
 
   /*
-   * wannatag本文ファクトリ
+   * [[com.tiloom6.wannatag.domain.model.wannatag.WannatagBody]] のファクトリ
    *
    * @param value 本文の値
-   * @return wannatag本文
+   * @return [[com.tiloom6.wannatag.domain.model.wannatag.WannatagBody]]
    */
   def apply(value: String): WannatagBody = {
     require(value.length > 0 && value.length <= 250,
