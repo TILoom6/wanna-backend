@@ -14,7 +14,7 @@ WannaTagサーバサイド
     - repository // infrastructure層のinterface定義
   - infrastructure // infrastructure層
   - presentation // presentation層（UI）
-  - serivce // ApplicationService層
+  - usecase // ApplicationService層
 ```
 
 参考：https://qiita.com/nanamen/items/f37d1047368929e377fd
