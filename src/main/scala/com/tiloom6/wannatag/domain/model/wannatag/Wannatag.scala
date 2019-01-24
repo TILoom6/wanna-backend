@@ -20,7 +20,7 @@ trait Wannatag extends Entity[WannatagId]{
   /*
    * [[WannatagAuthorName]]
    */
-  val username: WannatagAuthorId
+  val authorId: WannatagAuthorId
 
   /*
    * [[WannatagPostDate]]
@@ -36,11 +36,11 @@ object Wannatag {
   /*
    * Wannatag apply
    *
-   * @param id [[WannatagId]]
-   * @param title [[WannatagTitle]]
-   * @param body [[WannatagBody]]
-   * @param username [[WannatagAuthorName]]
-   * @param postDate [[WannatagPostDate]]
+   * @param id [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]]
+   * @param title [[com.tiloom6.wannatag.domain.model.wannatag.WannatagTitle]]
+   * @param body [[com.tiloom6.wannatag.domain.model.wannatag.WannatagBody]]
+   * @param authorId [[com.tiloom6.wannatag.domain.model.wannatag.WannatagAuthorId]]
+   * @param postDate [[com.tiloom6.wannatag.domain.model.wannatag.WannatagPostDate]]
    *
    * @return Wannatagエンティティ
    */
@@ -58,20 +58,20 @@ object Wannatag {
    * @return (WannatagId, WannatagTitle, WannatagBody, WannatagAuthorId, WannatagPostDate) tuple
    */
   def unapply(wannatag: Wannatag): Option[(WannatagId, WannatagTitle, WannatagBody, WannatagAuthorId, WannatagPostDate)] =
-    Some((wannatag.id, wannatag.title, wannatag.body, wannatag.username, wannatag.postDate))
+    Some((wannatag.id, wannatag.title, wannatag.body, wannatag.authorId, wannatag.postDate))
 
   /*
    * Wannatagエンティティ
    *
-   * @param id [[WannatagId]]
-   * @param title [[WannatagTitle]]
-   * @param body [[WannatagBody]]
-   * @param username [[WannatagAuthorId]]
-   * @param postDate [[WannatagPostDate]]
+   * @param id [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]]
+   * @param title [[com.tiloom6.wannatag.domain.model.wannatag.WannatagTitle]]
+   * @param body [[com.tiloom6.wannatag.domain.model.wannatag.WannatagBody]]
+   * @param authorId [[com.tiloom6.wannatag.domain.model.wannatag.WannatagAuthorId]]
+   * @param postDate [[com.tiloom6.wannatag.domain.model.wannatag.WannatagPostDate]]
    */
   private case class WannatagImpl(id: WannatagId,
                                   title: WannatagTitle,
                                   body: WannatagBody,
-                                  username: WannatagAuthorId,
+                                  authorId: WannatagAuthorId,
                                   postDate: WannatagPostDate) extends Wannatag
 }

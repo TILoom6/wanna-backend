@@ -21,7 +21,7 @@ final class WannatagSpec extends WordSpecLike
       wannatag.id must be(id)
       wannatag.title must be(title)
       wannatag.body must be(body)
-      wannatag.username must be(username)
+      wannatag.authorId must be(username)
       wannatag.postDate must be(postDate)
     }
   }
