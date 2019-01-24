@@ -3,7 +3,7 @@ package com.tiloom6.wannatag.domain.model
 import com.tiloom6.wannatag.domain.model.user.{User, UserId}
 
 /*
- * [[com.tiloom6.wannatag.domain.model.wannatag.Wannatag]] の暗黙定義パッケージ
+ * [[com.tiloom6.wannatag.domain.model.wannatag.Wannatag]] の汎用定義パッケージ
  */
 package object wannatag {
 
