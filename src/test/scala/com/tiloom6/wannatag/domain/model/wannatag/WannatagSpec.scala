@@ -28,11 +28,11 @@ final class WannatagSpec extends WordSpecLike
     "unapplyでプロパティを展開する" in {
       wannatag match {
         case Wannatag(_id: WannatagId, _title: WannatagTitle, _body: WannatagBody, _authorId: WannatagAuthorId, _postDate: WannatagPostDate) =>
-          id must be(_id)
-          title must be(_title)
-          body must be(_body)
-          authorId must be(_authorId)
-          postDate must be(_postDate)
+          _id must be(id)
+          _title must be(title)
+          _body must be(body)
+          _authorId must be(authorId)
+          _postDate must be(postDate)
         case _ => fail()
       }
     }

@@ -3,6 +3,9 @@ package com.tiloom6.wannatag.domain.model.user
 import org.joda.time.DateTime
 import org.scalatest.{MustMatchers, WordSpecLike}
 
+/*
+ * [[com.tiloom6.wannatag.domain.model.user.User]] のテスト
+ */
 final class UserSpec extends WordSpecLike
   with MustMatchers {
 
