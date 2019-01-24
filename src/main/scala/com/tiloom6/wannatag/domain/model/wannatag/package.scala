@@ -45,11 +45,11 @@ package object wannatag {
           postDate = postDate
         )
 
-        val result = WannatagCreated(
+        val wannatagCreatedEvent = WannatagCreated(
           id = wannatag.id
         )
 
-        DomainResult(wannatag, result)
+        DomainResult(wannatag, wannatagCreatedEvent)
       }
     }
   }
