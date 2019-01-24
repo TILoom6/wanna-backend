@@ -16,26 +16,26 @@ class WannaTagTableActorSpec extends TestKit(ActorSystem("testWannaTagTable"))
 
   implicit val dispatcher = system.dispatcher
 
-  "A WannaTagTable Actor" must {
-    "insert wannatag when it receives a InsertWannaTag message" in {
-      import akka.util.Timeout
-      import com.tiloom6.WannaTagTableActor.InsertWannaTag
-
-      val duration = Duration.create("1000 millis")
-      implicit val timeout: Timeout = FiniteDuration(duration.length, duration.unit)
-
-      val wannaTagTableActor = system.actorOf(WannaTagTableActor.props, "wannatagTable")
-
-      wannaTagTableActor ! InsertWannaTag(title = "test wannatag", body = "test body", userId = 1)
-      expectMsgPF(){
-        case futureResult: Future[Any] =>
-          val futureUserId = futureResult.mapTo[Long]
-
-          Await.ready(futureUserId, duration)
-
-          println(futureUserId.value.get.get)
-        case _ => fail()
-      }
-    }
-  }
+//  "A WannaTagTable Actor" must {
+//    "insert wannatag when it receives a InsertWannaTag message" in {
+//      import akka.util.Timeout
+//      import com.tiloom6.WannaTagTableActor.InsertWannaTag
+//
+//      val duration = Duration.create("1000 millis")
+//      implicit val timeout: Timeout = FiniteDuration(duration.length, duration.unit)
+//
+//      val wannaTagTableActor = system.actorOf(WannaTagTableActor.props, "wannatagTable")
+//
+//      wannaTagTableActor ! InsertWannaTag(title = "test wannatag", body = "test body", userId = 1)
+//      expectMsgPF(){
+//        case futureResult: Future[Any] =>
+//          val futureUserId = futureResult.mapTo[Long]
+//
+//          Await.ready(futureUserId, duration)
+//
+//          println(futureUserId.value.get.get)
+//        case _ => fail()
+//      }
+//    }
+//  }
 }

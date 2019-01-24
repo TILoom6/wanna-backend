@@ -26,7 +26,7 @@ package object wannatag {
      *
      * @param user [[com.tiloom6.wannatag.domain.model.user.User]]
      */
-    implicit case class Author(user: User) {
+    implicit class Author(user: User) {
 
       /*
        * wannatagを作成する

@@ -17,40 +17,40 @@ class WannaTagActorSpec extends TestKit(ActorSystem("testWannaTag"))
 
   implicit val dispatcher = system.dispatcher
 
-  "A WannaTag Actor" must {
-    import WannaTagActor._
-    import com.tiloom6.Tables._
-
-    "return wannaTag when it receives a GetWannaTag message" in {
-      import akka.util.Timeout
-
-      val duration = Duration.create("3000 millis")
-      implicit val timeout: Timeout = FiniteDuration(duration.length, duration.unit)
-      // TODO 子アクターのMockを渡す形にしたい
-      val wannatagActor = system.actorOf(WannaTagActor.props, "wannatag")
-
-      // テスト実行
-      wannatagActor ! GetWannaTags("newer", 0, 1)
-
-      // アサート
-      expectMsgPF() {
-        case futureResult: Future[Any] =>
-
-          // Actorからの受け取り結果をFuture[Promise[Seq[WannatagRow]]]に変換
-          val futurePromiseWannatags = futureResult.mapTo[Promise[Seq[WannatagRow]]]
-          val futureWannatags = futurePromiseWannatags.flatMap(p => p.future)
-
-          // futureの処理待ち
-          Await.ready(futureWannatags, duration)
-
-          // Futur[Try[Seq[WannatagRow]]] -> WannatagRow 途中で例外が発生したらテストエラーになるだけなのでgetでOK
-          val wannatags = futureWannatags.value.get.get
-
-          // アサーション
-          wannatags.length must be(1)
-
-        case _ => fail()
-      }
-    }
-  }
+//  "A WannaTag Actor" must {
+//    import WannaTagActor._
+//    import com.tiloom6.Tables._
+//
+//    "return wannaTag when it receives a GetWannaTag message" in {
+//      import akka.util.Timeout
+//
+//      val duration = Duration.create("3000 millis")
+//      implicit val timeout: Timeout = FiniteDuration(duration.length, duration.unit)
+//      // TODO 子アクターのMockを渡す形にしたい
+//      val wannatagActor = system.actorOf(WannaTagActor.props, "wannatag")
+//
+//      // テスト実行
+//      wannatagActor ! GetWannaTags("newer", 0, 1)
+//
+//      // アサート
+//      expectMsgPF() {
+//        case futureResult: Future[Any] =>
+//
+//          // Actorからの受け取り結果をFuture[Promise[Seq[WannatagRow]]]に変換
+//          val futurePromiseWannatags = futureResult.mapTo[Promise[Seq[WannatagRow]]]
+//          val futureWannatags = futurePromiseWannatags.flatMap(p => p.future)
+//
+//          // futureの処理待ち
+//          Await.ready(futureWannatags, duration)
+//
+//          // Futur[Try[Seq[WannatagRow]]] -> WannatagRow 途中で例外が発生したらテストエラーになるだけなのでgetでOK
+//          val wannatags = futureWannatags.value.get.get
+//
+//          // アサーション
+//          wannatags.length must be(1)
+//
+//        case _ => fail()
+//      }
+//    }
+//  }
 }
