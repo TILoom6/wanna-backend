@@ -8,9 +8,10 @@ import com.tiloom6.wannatag.domain.model.user.{User, UserId}
 package object wannatag {
 
   /*
-   * [[com.tiloom6.wannatag.domain.model.wannatag.Wannatag]] の暗黙変換メソッド
+   * [[com.tiloom6.wannatag.domain.model.wannatag.Wannatag]] の暗黙変換
    */
   object Implicits {
+    import scala.language.implicitConversions
 
     /*
      * [[com.tiloom6.wannatag.domain.model.user.UserId]] を [[com.tiloom6.wannatag.domain.model.wannatag.WannatagAuthorId]] に変換する

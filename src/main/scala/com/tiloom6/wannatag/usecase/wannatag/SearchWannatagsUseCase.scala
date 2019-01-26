@@ -2,6 +2,9 @@ package com.tiloom6.wannatag.usecase.wannatag
 
 import com.tiloom6.wannatag.domain.model.wannatag.Wannatag
 import com.tiloom6.wannatag.domain.repository.wannatag.WannatagRepository
+import com.tiloom6.wannatag.usecase.Implicits._
+import com.tiloom6.wannatag.usecase.ErrorHandleHelper._
+import com.tiloom6.wannatag.usecase.ServiceError
 import org.joda.time.DateTime
 
 import scala.concurrent.{ExecutionContext, Future}
@@ -18,6 +21,11 @@ trait SearchWannatagsUseCase {
   implicit val executionContext: ExecutionContext
 
   /*
+   * リポジトリのエラーハンドラ
+   */
+  implicit val repositoryErrorHandler: Throwable => ServiceError
+
+  /*
    * [[com.tiloom6.wannatag.domain.repository.wannatag.WannatagRepository]]
    */
   val wannatagRepository: WannatagRepository
@@ -30,11 +38,11 @@ trait SearchWannatagsUseCase {
    * @param limit 取得件数 TODO ValueObject定義する
    * @return 検索結果Wannatagリスト
    */
-  def Execute(criterionPostDate: DateTime, isOlder: Boolean = true, limit: Long = -1L): Future[Either[_, Seq[Wannatag]]] = {
+  def Execute(criterionPostDate: DateTime, isOlder: Boolean = true, limit: Long = -1L): Future[Either[ServiceError, Seq[Wannatag]]] = {
     for {
       tryWannatags <- wannatagRepository.searchWannatagsThatSatisfyCondition(criterionPostDate, isOlder, limit)
     } yield for {
-      wannatags <- tryWannatags.toEither.right
+        wannatags <- tryWannatags ifFailureThen asServiceError
     } yield wannatags
   }
 }

@@ -6,7 +6,6 @@ import akka.http.scaladsl.Http
 import akka.stream.Materializer
 
 import scala.concurrent.{ExecutionContext, Future}
-import scala.io.StdIn
 
 /*
  * サーバトレイト
