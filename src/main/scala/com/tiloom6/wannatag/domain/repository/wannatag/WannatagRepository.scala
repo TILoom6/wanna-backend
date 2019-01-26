@@ -1,7 +1,6 @@
 package com.tiloom6.wannatag.domain.repository.wannatag
 
 import com.tiloom6.wannatag.domain.model.wannatag.{Wannatag, WannatagId, WannatagPostDate}
-import org.joda.time.DateTime
 
 import scala.concurrent.Future
 import scala.util.Try

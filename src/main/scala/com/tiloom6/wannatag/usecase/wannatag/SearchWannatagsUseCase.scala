@@ -5,7 +5,6 @@ import com.tiloom6.wannatag.domain.repository.wannatag.{WannatagsSearchLimit, Ol
 import com.tiloom6.wannatag.usecase.Implicits._
 import com.tiloom6.wannatag.usecase.ErrorHandleHelper._
 import com.tiloom6.wannatag.usecase.ServiceError
-import org.joda.time.DateTime
 
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.Either
