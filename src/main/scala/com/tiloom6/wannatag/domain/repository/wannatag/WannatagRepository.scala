@@ -1,6 +1,6 @@
 package com.tiloom6.wannatag.domain.repository.wannatag
 
-import com.tiloom6.wannatag.domain.model.wannatag.{Wannatag, WannatagId}
+import com.tiloom6.wannatag.domain.model.wannatag.{Wannatag, WannatagId, WannatagPostDate}
 import org.joda.time.DateTime
 
 import scala.concurrent.Future
@@ -14,12 +14,12 @@ trait WannatagRepository {
   /*
    * 条件を満たすWannatagリストを取得する
    *
-   * @param criterionPostDate 取得基準とするWannatag投稿日 TODO ValueObject定義する
-   * @param compare criterionPostDateより新しいものを取得するか古いものを取得するか TODO ValueObject定義する
-   * @param limit 取得件数 TODO ValueObject定義する
+   * @param criterionPostDate 取得基準とするWannatag投稿日
+   * @param olderOrNewer criterionPostDateより新しいものを取得するか古いものを取得するか
+   * @param limit 取得件数
    * @return Wannatagリストを取得するFuture
    */
-  def searchWannatagsThatSatisfyCondition(criterionPostDate: DateTime, isOlder: Boolean, limit: Long): Future[Try[Seq[Wannatag]]]
+  def searchWannatagsThatSatisfyCondition(criterionPostDate: WannatagPostDate, olderOrNewer: OlderOrNewer, limit: WannatagsSearchLimit): Future[Try[Seq[Wannatag]]]
 
   /*
    * Wannatagを保存（Insert or Update）する
