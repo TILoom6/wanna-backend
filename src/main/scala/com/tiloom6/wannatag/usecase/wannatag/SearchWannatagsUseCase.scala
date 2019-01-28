@@ -37,7 +37,7 @@ trait SearchWannatagsUseCase {
    * @param limit 取得件数
    * @return 検索結果Wannatagリスト
    */
-  def Execute(criterionPostDate: WannatagPostDate, olderOrNewer: OlderOrNewer, limit: WannatagsSearchLimit): Future[Either[ServiceError, Seq[Wannatag]]] = {
+  def execute(criterionPostDate: WannatagPostDate, olderOrNewer: OlderOrNewer, limit: WannatagsSearchLimit): Future[Either[ServiceError, Seq[Wannatag]]] = {
     for {
       tryWannatags <- wannatagRepository.searchWannatagsThatSatisfyCondition(criterionPostDate, olderOrNewer, limit)
     } yield for {

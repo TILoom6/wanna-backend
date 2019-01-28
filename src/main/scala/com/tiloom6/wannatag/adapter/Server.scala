@@ -1,8 +1,8 @@
-package com.tiloom6.wannatag
+package com.tiloom6.wannatag.adapter
 
 import akka.actor.ActorSystem
-import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.Http
+import akka.http.scaladsl.server.Route
 import akka.stream.Materializer
 
 import scala.concurrent.{ExecutionContext, Future}

@@ -1,4 +1,4 @@
-package com.tiloom6.wannatag
+package com.tiloom6.wannatag.adapter
 
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
