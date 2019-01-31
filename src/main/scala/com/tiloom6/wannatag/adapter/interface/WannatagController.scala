@@ -7,6 +7,9 @@ import com.tiloom6.wannatag.domain.model.wannatag._
 import com.tiloom6.wannatag.domain.repository.wannatag.{OlderOrNewer, WannatagRepository, WannatagsSearchLimit}
 import com.tiloom6.wannatag.usecase.{NotFoundError, ServiceError}
 import com.tiloom6.wannatag.usecase.wannatag.SearchWannatagsUseCase
+import com.tiloom6.wannatag.adapter.interface.SearchWannatagsResponseProtocol._
+import akka.http.scaladsl.model.StatusCodes._
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
 
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success, Try}
@@ -43,8 +46,26 @@ trait WannatagController {
           }
 
           onComplete(searchWannatagsUseCase.execute(criterionPostDate, olderOrNewer, wannatagSearchinglimit)) {
-            case Success(value) => complete("OK") // TODO Eitherでパターン分けて求められるものを返す
-            case Failure(exception) => complete(exception.getMessage) // TODO エラーハンドリングする
+            case Success(maybe) => maybe match {
+              // TODO エラーハンドリングする
+              case Left(serviceError) => complete(BadRequest, "serviceError.getMessage")
+              case Right(wannatags) => {
+                // TODO responseの生成はusecase側で行う
+                val response = wannatags.map(wannatag => SearchWannatagsResponse(
+                  wannatag.id.value,
+                  wannatag.title.value,
+                  wannatag.body.value,
+                  // TODO usecase側でuserIdと紐づけてusername取得する
+                  wannatag.authorId.value.toString,
+                  wannatag.postDate.value,
+                  // TODO usecase側でuserIdと紐づけてAPI叩いているユーザと比較する
+                  true
+                ))
+                complete(OK, response)
+              }
+            }
+            // TODO エラーハンドリングする
+            case Failure(exception) => complete(InternalServerError, exception.getMessage)
           }
         }
       }
