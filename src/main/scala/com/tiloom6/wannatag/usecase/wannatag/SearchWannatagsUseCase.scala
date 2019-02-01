@@ -41,7 +41,7 @@ trait SearchWannatagsUseCase {
     for {
       tryWannatags <- wannatagRepository.searchWannatagsThatSatisfyCondition(criterionPostDate, olderOrNewer, limit)
     } yield for {
-        wannatags <- tryWannatags ifFailureThen asServiceError
+      wannatags <- tryWannatags ifFailureThen asServiceError
     } yield wannatags
   }
 }
