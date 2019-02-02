@@ -7,10 +7,8 @@ import com.tiloom6.wannatag.usecase.{NotFoundError, ServiceError}
 import com.tiloom6.wannatag.usecase.wannatag.SearchWannatagsUseCase
 import com.tiloom6.wannatag.adapter.interface.SearchWannatagsResponseProtocol._
 import akka.http.scaladsl.model.StatusCodes._
-import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport.sprayJsonMarshaller
 import com.tiloom6.wannatag.domain.user.UserId
-import com.tiloom6.wannatag.domain.wannatag.{OlderOrNewer, WannatagsSearchLimit}
-import com.tiloom6.wannatag.domain.wannatag.{Wannatag, WannatagRepository}
 
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success, Try}

@@ -1,7 +1,6 @@
 package com.tiloom6.wannatag.adapter.interface
 
-import com.tiloom6.wannatag.domain.wannatag.WannatagPostDate
-import com.tiloom6.wannatag.domain.wannatag.{OlderOrNewer, WannatagsSearchLimit}
+import com.tiloom6.wannatag.domain.wannatag._
 
 trait WannatagConvertor {
 

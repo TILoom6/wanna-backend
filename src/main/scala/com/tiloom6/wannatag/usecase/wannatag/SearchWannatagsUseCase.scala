@@ -1,8 +1,6 @@
 package com.tiloom6.wannatag.usecase.wannatag
 
-import com.tiloom6.wannatag.domain.wannatag.WannatagPostDate
-import com.tiloom6.wannatag.domain.wannatag.{OlderOrNewer, WannatagsSearchLimit}
-import com.tiloom6.wannatag.domain.wannatag.{Wannatag, WannatagRepository}
+import com.tiloom6.wannatag.domain.wannatag._
 import com.tiloom6.wannatag.usecase.Implicits._
 import com.tiloom6.wannatag.usecase.ErrorHandleHelper._
 import com.tiloom6.wannatag.usecase.ServiceError
