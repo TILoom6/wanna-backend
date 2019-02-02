@@ -1,10 +1,11 @@
 package com.tiloom6.wannatag.domain.model.user
 
+import com.tiloom6.wannatag.domain.user.UserCreateAt
 import org.joda.time.DateTime
 import org.scalatest.{MustMatchers, WordSpecLike}
 
 /*
- * [[com.tiloom6.wannatag.domain.model.user.User]] のテスト
+ * [[com.tiloom6.wannatag.domain.user.User]] のテスト
  */
 final class UserSpec extends WordSpecLike
   with MustMatchers {

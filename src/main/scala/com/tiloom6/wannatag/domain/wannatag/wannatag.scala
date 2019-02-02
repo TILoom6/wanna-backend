@@ -1,6 +1,6 @@
-package com.tiloom6.wannatag.domain.model.wannatag
+package com.tiloom6.wannatag.domain.wannatag
 
-import com.tiloom6.wannatag.domain.model.Entity
+import com.tiloom6.wannatag.domain.Entity
 
 /*
  * Wannatagエンティティトレイト
@@ -36,11 +36,11 @@ object Wannatag {
   /*
    * Wannatag apply
    *
-   * @param id [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]]
-   * @param title [[com.tiloom6.wannatag.domain.model.wannatag.WannatagTitle]]
-   * @param body [[com.tiloom6.wannatag.domain.model.wannatag.WannatagBody]]
-   * @param authorId [[com.tiloom6.wannatag.domain.model.wannatag.WannatagAuthorId]]
-   * @param postDate [[com.tiloom6.wannatag.domain.model.wannatag.WannatagPostDate]]
+   * @param id [[com.tiloom6.wannatag.domain.wannatag.WannatagId]]
+   * @param title [[com.tiloom6.wannatag.domain.wannatag.WannatagTitle]]
+   * @param body [[com.tiloom6.wannatag.domain.wannatag.WannatagBody]]
+   * @param authorId [[com.tiloom6.wannatag.domain.wannatag.WannatagAuthorId]]
+   * @param postDate [[com.tiloom6.wannatag.domain.wannatag.WannatagPostDate]]
    *
    * @return Wannatagエンティティ
    */
@@ -63,11 +63,11 @@ object Wannatag {
   /*
    * Wannatagエンティティ
    *
-   * @param id [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]]
-   * @param title [[com.tiloom6.wannatag.domain.model.wannatag.WannatagTitle]]
-   * @param body [[com.tiloom6.wannatag.domain.model.wannatag.WannatagBody]]
-   * @param authorId [[com.tiloom6.wannatag.domain.model.wannatag.WannatagAuthorId]]
-   * @param postDate [[com.tiloom6.wannatag.domain.model.wannatag.WannatagPostDate]]
+   * @param id [[com.tiloom6.wannatag.domain.wannatag.WannatagId]]
+   * @param title [[com.tiloom6.wannatag.domain.wannatag.WannatagTitle]]
+   * @param body [[com.tiloom6.wannatag.domain.wannatag.WannatagBody]]
+   * @param authorId [[com.tiloom6.wannatag.domain.wannatag.WannatagAuthorId]]
+   * @param postDate [[com.tiloom6.wannatag.domain.wannatag.WannatagPostDate]]
    */
   private case class WannatagImpl(id: WannatagId,
                                   title: WannatagTitle,

@@ -1,7 +1,8 @@
 package com.tiloom6.wannatag.usecase.wannatag
 
-import com.tiloom6.wannatag.domain.model.wannatag.{Wannatag, WannatagPostDate}
-import com.tiloom6.wannatag.domain.repository.wannatag.{WannatagsSearchLimit, OlderOrNewer, WannatagRepository}
+import com.tiloom6.wannatag.domain.wannatag.WannatagPostDate
+import com.tiloom6.wannatag.domain.wannatag.{OlderOrNewer, WannatagsSearchLimit}
+import com.tiloom6.wannatag.domain.wannatag.{Wannatag, WannatagRepository}
 import com.tiloom6.wannatag.usecase.Implicits._
 import com.tiloom6.wannatag.usecase.ErrorHandleHelper._
 import com.tiloom6.wannatag.usecase.ServiceError
@@ -25,7 +26,7 @@ trait SearchWannatagsUseCase {
   implicit val repositoryErrorHandler: Throwable => ServiceError
 
   /*
-   * [[com.tiloom6.wannatag.domain.repository.wannatag.WannatagRepository]]
+   * [[com.tiloom6.wannatag.domain.wannatag.WannatagRepository]]
    */
   val wannatagRepository: WannatagRepository
 

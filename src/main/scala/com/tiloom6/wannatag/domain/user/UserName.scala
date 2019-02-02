@@ -1,6 +1,6 @@
-package com.tiloom6.wannatag.domain.model.user
+package com.tiloom6.wannatag.domain.user
 
-import com.tiloom6.wannatag.domain.model.ValueObject
+import com.tiloom6.wannatag.domain.ValueObject
 
 /*
  * userの名称

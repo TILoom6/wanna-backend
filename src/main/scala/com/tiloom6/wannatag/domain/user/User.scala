@@ -1,6 +1,6 @@
-package com.tiloom6.wannatag.domain.model.user
+package com.tiloom6.wannatag.domain.user
 
-import com.tiloom6.wannatag.domain.model.Entity
+import com.tiloom6.wannatag.domain.Entity
 
 /*
  * userエンティティトレイト
@@ -20,12 +20,12 @@ trait User extends Entity[UserId] {
 
 
 /*
- * [[com.tiloom6.wannatag.domain.model.user.User]] のコンパニオンオブジェクト
+ * [[com.tiloom6.wannatag.domain.user.User]] のコンパニオンオブジェクト
  */
 object User {
 
   /*
-   * [[com.tiloom6.wannatag.domain.model.user.User]] apply
+   * [[com.tiloom6.wannatag.domain.user.User]] apply
    *
    * @param id ユーザーID
    * @param name ユーザーネーム
@@ -35,7 +35,7 @@ object User {
   def apply(id: UserId, name: UserName, createAt: UserCreateAt): User = new UserImpl(id, name, createAt)
 
   /*
-   * [[com.tiloom6.wannatag.domain.model.user.User]] unapply
+   * [[com.tiloom6.wannatag.domain.user.User]] unapply
    *
    * @param user ユーザー
    * @return (UserId, UserName, UserCreateAt)
@@ -44,7 +44,7 @@ object User {
 
 
   /*
-   * [[com.tiloom6.wannatag.domain.model.user.User]] エンティティ
+   * [[com.tiloom6.wannatag.domain.user.User]] エンティティ
    *
    * @param id ユーザーID
    * @param name ユーザーネーム

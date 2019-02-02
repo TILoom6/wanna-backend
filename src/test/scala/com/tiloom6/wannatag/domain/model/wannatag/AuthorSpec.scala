@@ -1,7 +1,9 @@
 package com.tiloom6.wannatag.domain.model.wannatag
 
-import com.tiloom6.wannatag.domain.model.{DomainResult, EntityIdGenerator}
-import com.tiloom6.wannatag.domain.model.user.{User, UserCreateAt, UserId, UserName}
+import com.tiloom6.wannatag.domain.EntityIdGenerator
+import com.tiloom6.wannatag.domain.model.DomainResult
+import com.tiloom6.wannatag.domain.model.user.User
+import com.tiloom6.wannatag.domain.user.UserCreateAt
 import org.joda.time.DateTime
 import org.scalatest.{MustMatchers, WordSpecLike}
 

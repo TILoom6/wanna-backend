@@ -1,6 +1,6 @@
-package com.tiloom6.wannatag.domain.model.wannatag
+package com.tiloom6.wannatag.domain.wannatag
 
-import com.tiloom6.wannatag.domain.model.ValueObject
+import com.tiloom6.wannatag.domain.ValueObject
 
 /*
  * wannatag登録日時

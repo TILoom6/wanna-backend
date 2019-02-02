@@ -3,7 +3,7 @@ package com.tiloom6.wannatag.domain.model.wannatag
 import org.scalatest._
 
 /*
- * [[com.tiloom6.wannatag.domain.model.wannatag.Wannatag]] のテスト
+ * [[com.tiloom6.wannatag.domain.wannatag.Wannatag]] のテスト
  */
 final class WannatagSpec extends WordSpecLike
   with MustMatchers {

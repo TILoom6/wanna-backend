@@ -1,12 +1,10 @@
-package com.tiloom6.wannatag.domain.repository.wannatag
-
-import com.tiloom6.wannatag.domain.model.wannatag.{Wannatag, WannatagId, WannatagPostDate}
+package com.tiloom6.wannatag.domain.wannatag
 
 import scala.concurrent.Future
 import scala.util.Try
 
 /*
- * [[com.tiloom6.wannatag.domain.model.wannatag.Wannatag]] のリポジトリトレイト
+ * [[com.tiloom6.wannatag.domain.wannatag.Wannatag]] のリポジトリトレイト
  */
 trait WannatagRepository {
 

@@ -1,4 +1,4 @@
-package com.tiloom6.wannatag.domain.model
+package com.tiloom6.wannatag.domain
 
 /*
  * ValueObjectであることを表す汎用トレイと

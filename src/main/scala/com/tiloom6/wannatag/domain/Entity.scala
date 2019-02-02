@@ -1,4 +1,4 @@
-package com.tiloom6.wannatag.domain.model
+package com.tiloom6.wannatag.domain
 
 /*
  * entityであることを表す汎用トレイト

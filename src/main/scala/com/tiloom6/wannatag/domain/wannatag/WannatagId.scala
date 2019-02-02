@@ -1,6 +1,6 @@
-package com.tiloom6.wannatag.domain.model.wannatag
+package com.tiloom6.wannatag.domain.wannatag
 
-import com.tiloom6.wannatag.domain.model.EntityId
+import com.tiloom6.wannatag.domain.EntityId
 
 /*
  * wannatagの識別子
@@ -10,15 +10,15 @@ import com.tiloom6.wannatag.domain.model.EntityId
 case class WannatagId private (value: Long) extends AnyVal with EntityId[Long]
 
 /*
- * [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]] のコンパニオンオブジェクト
+ * [[com.tiloom6.wannatag.domain.wannatag.WannatagId]] のコンパニオンオブジェクト
  */
 object WannatagId {
 
   /*
-   * [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]] のファクトリ
+   * [[com.tiloom6.wannatag.domain.wannatag.WannatagId]] のファクトリ
    *
    * @param value 識別子の値
-   * @return [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]]
+   * @return [[com.tiloom6.wannatag.domain.wannatag.WannatagId]]
    */
   def apply(value: Long): WannatagId = {
     require(value > 0,

@@ -1,4 +1,4 @@
-package com.tiloom6.wannatag.domain.model
+package com.tiloom6.wannatag.domain
 
 /*
  * ドメインイベントを表す汎用トレイト
