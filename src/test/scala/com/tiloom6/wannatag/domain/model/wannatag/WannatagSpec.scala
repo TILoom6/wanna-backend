@@ -1,4 +1,4 @@
-package com.tiloom6.wannatag.domain.model.wannatag
+package com.tiloom6.wannatag.domain.wannatag
 
 import org.scalatest._
 

@@ -1,16 +1,15 @@
-package com.tiloom6.wannatag.domain.model.wannatag
+package com.tiloom6.wannatag.domain.wannatag
 
 import com.tiloom6.wannatag.domain.EntityIdGenerator
-import com.tiloom6.wannatag.domain.model.DomainResult
-import com.tiloom6.wannatag.domain.model.user.User
-import com.tiloom6.wannatag.domain.user.UserCreateAt
+import com.tiloom6.wannatag.domain.DomainResult
+import com.tiloom6.wannatag.domain.user._
 import org.joda.time.DateTime
 import org.scalatest.{MustMatchers, WordSpecLike}
 
 final class AuthorSpec extends WordSpecLike
   with MustMatchers {
 
-  import com.tiloom6.wannatag.domain.model.wannatag.Implicits._
+  import com.tiloom6.wannatag.domain.wannatag.Implicits._
 
   private val userId = UserId(1)
   private val userName = UserName("user name")

@@ -1,6 +1,5 @@
 package com.tiloom6.wannatag.domain
 
-import com.tiloom6.wannatag.domain
 import com.tiloom6.wannatag.domain.user.{User, UserId}
 
 package object wannatag {
@@ -44,11 +43,11 @@ package object wannatag {
           postDate = postDate
         )
 
-        val wannatagCreatedEvent = domain.wannatag.WannatagCreated(
+        val wannatagCreatedEvent = WannatagCreated(
           id = wannatag.id
         )
 
-        domain.DomainResult(wannatag, wannatagCreatedEvent)
+        DomainResult(wannatag, wannatagCreatedEvent)
       }
     }
   }
