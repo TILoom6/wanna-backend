@@ -10,15 +10,15 @@ import com.tiloom6.wannatag.domain.ValueObject
 case class UserName private (value: String) extends AnyVal with ValueObject[String]
 
 /*
- * [[com.tiloom6.wannatag.domain.model.user.UsrName]] のコンパニオンオブジェクト
+ * [[com.tiloom6.wannatag.domain.user.UsrName]] のコンパニオンオブジェクト
  */
 object UserName {
 
   /*
-   * [[com.tiloom6.wannatag.domain.model.user.UsrName]] のファクトリ
+   * [[com.tiloom6.wannatag.domain.user.UsrName]] のファクトリ
    *
    * @param value 名称の値
-   * @return [[com.tiloom6.wannatag.domain.model.user.UsrName]]
+   * @return [[com.tiloom6.wannatag.domain.user.UsrName]]
    */
   def apply(value: String): UserName = {
     require(value.length > 0,

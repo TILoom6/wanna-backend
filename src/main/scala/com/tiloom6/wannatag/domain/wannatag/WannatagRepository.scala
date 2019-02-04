@@ -29,7 +29,7 @@ trait WannatagRepository {
   /*
    * Wannatagを削除する
    *
-   * @param id 削除対象の [[com.tiloom6.wannatag.domain.model.wannatag.WannatagId]]
+   * @param id 削除対象の [[com.tiloom6.wannatag.domain.wannatag.WannatagId]]
    * @return 削除したWannatag
    */
   def delete(id: WannatagId): Future[Try[Wannatag]]

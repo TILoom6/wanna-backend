@@ -30,7 +30,7 @@ object User {
    * @param id ユーザーID
    * @param name ユーザーネーム
    * @param createAt ユーザー作成日時
-   * @return [[com.tiloom6.wannatag.domain.model.user.UserImpl]]
+   * @return [[com.tiloom6.wannatag.domain.user.UserImpl]]
    */
   def apply(id: UserId, name: UserName, createAt: UserCreateAt): User = new UserImpl(id, name, createAt)
 
