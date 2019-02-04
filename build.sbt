@@ -14,6 +14,7 @@ val baseSettings = Seq(
     val slickJodaMapperVersion = "2.3.0"
     val mysqlConnectorVersion = "8.0.11"
     val jodaTimeVersion = "2.10"
+    val dddbaseVersion = "1.0.14"
     Seq(
       "com.typesafe.akka" %% "akka-actor"      % akkaVersion,
       "com.typesafe.akka" %% "akka-http-core"  % akkaHttpVersion,
@@ -25,10 +26,13 @@ val baseSettings = Seq(
       "com.github.tototoshi" %% "slick-joda-mapper" % slickJodaMapperVersion,
       "mysql" % "mysql-connector-java" % mysqlConnectorVersion,
       "joda-time" % "joda-time" % jodaTimeVersion,
+      "com.github.j5ik2o" %% "scala-ddd-base-core" % dddbaseVersion,
+      "com.github.j5ik2o" %% "scala-ddd-base-slick" % dddbaseVersion,
       "com.typesafe.akka" %% "akka-testkit"    % akkaVersion  % "test",
-      "org.scalatest"     %% "scalatest"       % scalatestVersion % "test"
+      "org.scalatest"     %% "scalatest"       % scalatestVersion % "test",
     )
-  }
+  },
+  dependencyOverrides += "org.typelevel" %% "cats-core" % "1.5.0"
 )
 
 lazy val root = (project in file("."))
