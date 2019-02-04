@@ -9,11 +9,10 @@ WannaTagサーバサイド
 ```
 - com.tiloom6
   - domain // ドメイン層
-    - model // ドメインオブジェクト
-    - service // ドメインモデルのロジック
-    - repository // infrastructure層のinterface定義
   - infrastructure // infrastructure層
-  - presentation // presentation層（UI）
+  - adapter // presentation層（UI）
+    - infrastructure // infra層（domain repository impl）
+    - interface // http routiong etc.
   - usecase // ApplicationService層
 ```
 
