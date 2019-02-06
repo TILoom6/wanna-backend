@@ -33,4 +33,11 @@ trait WannatagRepository {
    * @return 削除したWannatag
    */
   def delete(id: WannatagId): Future[Try[Wannatag]]
+
+  /*
+   * IDを元にWannatagを取得する
+   *
+   *　@param id 取得対象の [[com.tiloom6.wannatag.domain.wannatag.WannatagId]]
+   */
+  def findById(id: WannatagId): Future[Try[Wannatag]]
 }
