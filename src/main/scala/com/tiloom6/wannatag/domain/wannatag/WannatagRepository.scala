@@ -38,6 +38,7 @@ trait WannatagRepository {
    * IDを元にWannatagを取得する
    *
    *　@param id 取得対象の [[com.tiloom6.wannatag.domain.wannatag.WannatagId]]
+   * @return 取得したWannatag
    */
   def findById(id: WannatagId): Future[Try[Wannatag]]
 }

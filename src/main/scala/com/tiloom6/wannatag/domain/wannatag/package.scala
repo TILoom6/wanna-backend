@@ -18,6 +18,8 @@ package object wannatag {
      */
     implicit def UserIdToWannatagAuthorId(userId: UserId) = WannatagAuthorId(userId.value)
 
+    implicit def WannatagAuthorIdToUserId(authorId: WannatagAuthorId) = UserId(authorId.value)
+
     /*
      * 作者
      * [[com.tiloom6.wannatag.domain.user.User]] の拡張クラス

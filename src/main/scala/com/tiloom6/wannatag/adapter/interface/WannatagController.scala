@@ -32,19 +32,19 @@ trait WannatagController {
             override implicit val executionContext: ExecutionContext = executionContext
             override implicit val repositoryErrorHandler: Throwable => ServiceError = _ => NotFoundError()
             override val wannatagRepository: WannatagRepository = new WannatagRepository {
-              def searchWannatagsThatSatisfyCondition(criterionPostDate: WannatagPostDate, olderOrNewer: OlderOrNewer, limit: WannatagsSearchLimit): Future[Try[Seq[Wannatag]]] = {
+              override def searchWannatagsThatSatisfyCondition(criterionPostDate: WannatagPostDate, olderOrNewer: OlderOrNewer, limit: WannatagsSearchLimit): Future[Try[Seq[Wannatag]]] = {
                 Future.successful(Try(Seq(Wannatag(WannatagId(1), WannatagTitle("title"), WannatagBody("body"), UserId(1), WannatagPostDate(1)))))
               }
-              def save(wannatag: Wannatag): Future[Try[Wannatag]] = {
-                Future.successful(Try(Wannatag(WannatagId(1), WannatagTitle("title"), WannatagBody("body"), UserId(1), WannatagPostDate(1))))
-              }
-              def delete(id: WannatagId): Future[Try[Wannatag]] = {
-                Future.successful(Try(Wannatag(WannatagId(1), WannatagTitle("title"), WannatagBody("body"), UserId(1), WannatagPostDate(1))))
-              }
+              def save(wannatag: Wannatag): Future[Try[Wannatag]] = ???
+              def delete(id: WannatagId): Future[Try[Wannatag]] = ???
+              def findById(id: WannatagId): Future[Try[Wannatag]] = ???
             }
+            override val m_criterionPostDate: WannatagPostDate = criterionPostDate
+            override val m_olderOrNewer: OlderOrNewer = olderOrNewer
+            override val m_limit: WannatagsSearchLimit = wannatagSearchinglimit
           }
 
-          onComplete(searchWannatagsUseCase.execute(criterionPostDate, olderOrNewer, wannatagSearchinglimit)) {
+          onComplete(searchWannatagsUseCase.execute()) {
             case Success(maybe) => maybe match {
               // TODO エラーハンドリングする
               case Left(serviceError) => complete(BadRequest, "serviceError.getMessage")

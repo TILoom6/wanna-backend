@@ -29,18 +29,29 @@ trait SearchWannatagsUseCase {
   val wannatagRepository: WannatagRepository
 
   /*
+   * 取得基準とするWannatag投稿日
+   */
+  val m_criterionPostDate: WannatagPostDate
+
+  /*
+   * m_criterionPostDateより新しいものを取得するか古いものを取得するか
+   */
+  val m_olderOrNewer: OlderOrNewer
+
+  /*
+   * 取得件数
+   */
+  val m_limit: WannatagsSearchLimit
+
+  /*
    * 実行
    *
-   * @param criterionPostDate 取得基準とするWannatag投稿日
-   * @param olderOrNewer criterionPostDateより新しいものを取得するか古いものを取得するか
-   * @param limit 取得件数
    * @return 検索結果Wannatagリスト
    */
-  def execute(criterionPostDate: WannatagPostDate, olderOrNewer: OlderOrNewer, limit: WannatagsSearchLimit): Future[Either[ServiceError, Seq[Wannatag]]] = {
+  def execute(): Future[Either[ServiceError, Seq[Wannatag]]] = {
     for {
-      tryWannatags <- wannatagRepository.searchWannatagsThatSatisfyCondition(criterionPostDate, olderOrNewer, limit)
-    } yield for {
-      wannatags <- tryWannatags ifFailureThen asServiceError
+      tryWannatags <- wannatagRepository.searchWannatagsThatSatisfyCondition(m_criterionPostDate, m_olderOrNewer, m_limit)
+      wannatags = tryWannatags ifFailureThen asServiceError
     } yield wannatags
   }
 }
